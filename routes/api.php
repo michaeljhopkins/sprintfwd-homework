@@ -3,6 +3,7 @@
 use App\Models\User;
 use App\Http\Controllers\Api\UsersController;
 use App\Http\Controllers\Api\ProjectsController;
+use App\Http\Controllers\Api\ProjectUsersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +24,6 @@ Route::middleware(['auth:sanctum',])->group(function () {
         ->only(['show', 'index']);
 
     Route::apiResource('projects', ProjectsController::class);
+
+    Route::post('projects/{id}/users', [ProjectUsersController::class, 'update']);
 });

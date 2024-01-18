@@ -120,7 +120,7 @@ class User extends Authenticatable
             return false;
         }
 
-        return $this->projects->contains(function ($p) use ($project) {
+        return $this->load('projects')->projects->contains(function ($p) use ($project) {
                 return $p->id === $project->id;
             });
     }
