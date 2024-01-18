@@ -13,8 +13,10 @@
             <!-- Token Name -->
             <div class="col-span-6 sm:col-span-4">
                 <x-label for="name" value="{{ __('Name') }}" />
-                <x-input id="name" type="text" class="mt-1 block w-full" wire:model="project.name" autofocus />
-                <x-input-error for="name" class="mt-2" />
+                <x-input id="name" type="text" class="mt-1 block w-full" wire:model="name" autofocus />
+                @error('name')
+                    <p class="text-sm text-red-600 dark:text-red-400 mt-2">{{ $message }}</p>
+                <@enderror
             </div>
 
         </x-slot>
@@ -43,7 +45,7 @@
 
                 <x-slot name="content">
                     <div class="space-y-6">
-                        @foreach (auth()->user()->projects->sortBy('name') as $project)
+                        @foreach ($this->projects->sortBy('name') as $project)
                             <div class="flex items-center justify-between">
                                 <div class="break-all dark:text-white">
                                     {{ $project->name }}

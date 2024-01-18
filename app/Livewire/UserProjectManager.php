@@ -7,21 +7,31 @@ use Livewire\Component;
 
 class UserProjectManager extends Component
 {
-    public Project $project;
+    public $name;
+    public $projects;
 
-    protected $rules = [
-        'project.name' => 'required|string|max:255'
-    ];
     public $projectBeingDeleted = null;
     public bool $confirmingProjectDeletion = false;
+
+    public function mount()
+    {
+        $this->projects = auth()->user()->projects;
+    }
 
     public function submit()
     {
         $this->resetErrorBag();
 
-        $this->validate();
+        $validated = $this->validate([
+            'name' => 'required|string|max:255'
+        ]);
 
-        $this->project->save();
+        $project = Project::create(['name' => $this->name]);
+
+        auth()->user()->projects()->attach($project);
+
+        $this->name = '';
+        $this->projects = auth()->user()->projects;
     }
 
     public function confirmProjectDeletion($id)
@@ -33,8 +43,9 @@ class UserProjectManager extends Component
 
     public function deleteProject()
     {
-        auth()->user()->projects()->where('id', $this->projectBeingDeleted)->first()->delete();
+        $this->projects->where('id', $this->projectBeingDeleted)->first()->delete();
 
+        $this->projects = auth()->user()->projects;
 
         $this->confirmingProjectDeletion = false;
     }
