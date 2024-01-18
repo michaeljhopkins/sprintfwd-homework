@@ -108,10 +108,6 @@
                                 </x-dropdown-link>
                             @endif
 
-                            <x-dropdown-link href="{{ route('projects.index') }}">
-                                {{ __('Projects') }}
-                            </x-dropdown-link>
-
                             <div class="border-t border-gray-200 dark:border-gray-600"></div>
 
                             <!-- Authentication -->
