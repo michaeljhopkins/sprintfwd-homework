@@ -1,3 +1,5 @@
+In addition to the below requirements I also exported the postman collection I was using for ease of testing. `./postman_collection.json`
+
 ### Exit Criteria
 
 - API Endpoints to: Create/Update/Delete/Index/Show teams [link](https://github.com/michaeljhopkins/sprintfwd-homework/blob/main/app/Http/Controllers/Api/TeamsController.php)
@@ -12,4 +14,5 @@
 ### Bonus
 
 - Add tests [link](https://github.com/michaeljhopkins/sprintfwd-homework/tree/main/tests/Feature)
-- Basic UI for the exit criteria above with laravel views
+- Basic UI for the exit criteria above with laravel views [link](https://github.com/michaeljhopkins/sprintfwd-homework/blob/main/resources/views/livewire/user-project-manager.blade.php)
+  - I only created a single page for creating a project, viewing, and deleting. 
