@@ -16,7 +16,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        return ProjectResource::collection(Project::all());
+        return response()->json(Project::with('users')->get());
     }
 
     /**
@@ -32,7 +32,7 @@ class ProjectsController extends Controller
      */
     public function show(Project $project)
     {
-        return new ProjectResource($project);
+        return response()->json($project->load('users'));
     }
 
     /**
