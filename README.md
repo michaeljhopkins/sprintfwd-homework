@@ -15,7 +15,7 @@ Provided in Laravel's Jetstream is all the functionality for user and team manag
 
 - Add tests [link](https://github.com/michaeljhopkins/sprintfwd-homework/tree/main/tests/Feature)
 - Basic UI for the exit criteria above with laravel views [link](https://github.com/michaeljhopkins/sprintfwd-homework/blob/main/resources/views/livewire/user-project-manager.blade.php)
-  - I only created the frontend functionality for creating, viewing, and deleting a project as a demonstration of Livewire competency
+  - I created the frontend functionality for creating, viewing, and deleting a project as a demonstration of Livewire competency
 
 
 ```
