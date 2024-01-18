@@ -26,10 +26,7 @@ class UserSeeder extends Seeder
     {
         $users = [
             'Admin' => 'admin@example.com',
-            'Owner' => 'owner@example.com',
-            'Manager' => 'manager@example.com',
-            'Staff' => 'staff@example.com',
-            'Volunteer' => 'volunteer@example.com'
+            'Editor' => 'editor@example.com',
         ];
         foreach ($users as $name => $email) {
             DB::transaction(function () use ($name, $email) {
@@ -46,23 +43,13 @@ class UserSeeder extends Seeder
         $team = $this->createBigTeam('admin@example.com');
 
         // assign to team
-        $role = 'manager';
-        $email = 'manager@example.com';
         $team->users()->attach(
-            Jetstream::findUserByEmailOrFail($email),
-            ['role' => $role]
+            Jetstream::findUserByEmailOrFail('admin@example.com'),
+            ['role' => 'admin']
         );
-        $role = 'staff';
-        $email = 'staff@example.com';
         $team->users()->attach(
-            Jetstream::findUserByEmailOrFail($email),
-            ['role' => $role]
-        );
-        $role = 'volunteer';
-        $email = 'volunteer@example.com';
-        $team->users()->attach(
-            Jetstream::findUserByEmailOrFail($email),
-            ['role' => $role]
+            Jetstream::findUserByEmailOrFail('editor@example.com'),
+            ['role' => 'editor']
         );
     }
     /**
