@@ -1,11 +1,10 @@
 <?php
 
-use App\Models\User;
 use App\Http\Controllers\Api\UsersController;
 use App\Http\Controllers\Api\ProjectsController;
 use App\Http\Controllers\Api\ProjectUsersController;
+use App\Http\Controllers\Api\TeamUsersController;
 use App\Http\Controllers\Api\TeamsController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,11 +20,15 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware(['auth:sanctum',])->group(function () {
-    Route::apiResource('users', UsersController::class)
-        ->only(['show', 'index']);
+    Route::apiResource('users', UsersController::class)->only(['show', 'index']);
     Route::apiResource('projects', ProjectsController::class);
     Route::apiResource('teams', TeamsController::class);
 
     Route::post('projects/{project}/users', [ProjectUsersController::class, 'update']);
     Route::delete('projects/{project}/users', [ProjectUsersController::class, 'delete']);
+    Route::get('projects/{project}/users', [ProjectUsersController::class, 'index']);
+
+    Route::post('teams/{team}/users', [TeamUsersController::class, 'update']);
+    Route::delete('teams/{team}/users', [TeamUsersController::class, 'delete']);
+    Route::get('teams/{team}/users', [TeamUsersController::class, 'index']);
 });

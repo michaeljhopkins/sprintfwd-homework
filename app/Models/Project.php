@@ -26,6 +26,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Project onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Project withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Project withoutTrashed()
  * @mixin \Eloquent
  */
 class Project extends Model

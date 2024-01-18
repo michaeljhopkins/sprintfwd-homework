@@ -10,6 +10,11 @@ use App\Models\User;
 
 class TeamUsersController extends Controller
 {
+    public function index(Team $team)
+    {
+        return response()->json($team->allUsers());
+    }
+
     public function update(AddUserToTeamRequest $request, Team $team)
     {
         $validated = $request->validated();
