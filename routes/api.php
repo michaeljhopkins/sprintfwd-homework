@@ -4,6 +4,7 @@ use App\Models\User;
 use App\Http\Controllers\Api\UsersController;
 use App\Http\Controllers\Api\ProjectsController;
 use App\Http\Controllers\Api\ProjectUsersController;
+use App\Http\Controllers\Api\TeamsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,8 +23,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth:sanctum',])->group(function () {
     Route::apiResource('users', UsersController::class)
         ->only(['show', 'index']);
-
     Route::apiResource('projects', ProjectsController::class);
+    Route::apiResource('teams', TeamsController::class);
 
     Route::post('projects/{project}/users', [ProjectUsersController::class, 'update']);
+    Route::delete('projects/{project}/users', [ProjectUsersController::class, 'delete']);
 });
