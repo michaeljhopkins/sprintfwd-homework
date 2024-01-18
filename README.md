@@ -1,4 +1,4 @@
-Provided in Laravel's Jetstream is all the functionality for user and team management as well as all the necessary tests. I wrote a second set of controllers for the api endpoints (linked below) and a handful of additional tests. Additionally added is a github action that automatically creates PR's with code formatting and linting fixes when new PR's are merged in. There is also a postman collection at `./postman_collection.json` for ease of testing. To get that working see the below
+Provided in Laravel's Jetstream is all the functionality for user and team management as well as all the necessary tests. I wrote a second set of controllers for the api endpoints (linked below) and a handful of additional tests. Additionally added is a github action that automatically creates PR's with code formatting and linting fixes when new PR's are merged in. There is also a postman collection at `./postman_collection.json` for ease of testing. To get that working see the below. The database seeders kick out a user/pass up to the terminal to use for testing
 
 ### Exit Criteria
 
