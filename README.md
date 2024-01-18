@@ -1,15 +1,15 @@
-initial install
+### Exit Criteria
 
-```
-composer create-project laravel/laravel sprint
-composer require laravel/jetstream laravel/sanctum
-php artisan jetstream:install livewire --teams --dark
-```
+- API Endpoints to: Create/Update/Delete/Index/Show teams [link](https://github.com/michaeljhopkins/sprintfwd-homework/blob/main/app/Http/Controllers/Api/TeamsController.php)
+- API Endpoints to: Create/Update/Delete/Index/Show members [link](https://github.com/michaeljhopkins/sprintfwd-homework/blob/main/app/Http/Controllers/Api/UsersController.php)
+- API Endpoints to: Create/Update/Delete/Index/Show projects [link](https://github.com/michaeljhopkins/sprintfwd-homework/blob/main/app/Http/Controllers/Api/ProjectsController.php)
+- API Endpoint to: Update the team of a member [link](https://github.com/michaeljhopkins/sprintfwd-homework/blob/main/app/Http/Controllers/Api/TeamUsersController.php)
+- API Endpoint to: Get the members of a specific team [link](https://github.com/michaeljhopkins/sprintfwd-homework/blob/main/app/Http/Controllers/Api/TeamUsersController.php)
+- API Endpoint to: Add a member to a project [link](https://github.com/michaeljhopkins/sprintfwd-homework/blob/main/app/Http/Controllers/Api/ProjectUsersController.php)
+- API Endpoint to: Get the members of a specific project [link](https://github.com/michaeljhopkins/sprintfwd-homework/blob/main/app/Http/Controllers/Api/ProjectUsersController.php)
+- Commit the code to a public GitHub repo for the SprintFWD team to assess. Thank you!
 
-customizations
+### Bonus
 
-```
-php artisan make:migration add_columns_to_users_table
-php artisan make:model Project --all
-php artisan make:controller ProjectsController --model=Project --api --requests
-```
+- Add tests [link](https://github.com/michaeljhopkins/sprintfwd-homework/tree/main/tests/Feature)
+- Basic UI for the exit criteria above with laravel views
