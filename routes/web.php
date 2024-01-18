@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProjectsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,5 +27,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::resource('projects', \App\Http\Controllers\ProjectController::class);
+    Route::get('projects', [ProjectsController::class, 'index'])->name('projects.index');
 });
