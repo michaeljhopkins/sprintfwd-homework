@@ -39,4 +39,4 @@ php artisan serve
 
 In postman import the json file in this repo. Then click on the collection and go to variables. Paste in the token and update your host to the value from `php artisan serve`
 
-[](!https://i.imgur.com/wAo3eqt.png)
+<img src="https://i.imgur.com/wAo3eqt.png">
