@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\User;
+use App\Http\Controllers\Api\UsersController;
+use App\Http\Controllers\Api\ProjectsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,10 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware(['auth:sanctum',])->group(function () {
-    Route::get('/user', function (Request $request) {
-        return response()->json(User::with(['currentTeam', 'projects'])
-            ->find(auth()->id()));
-    });
+    Route::apiResource('users', UsersController::class)
+        ->only(['show', 'index']);
 
-    Route::apiResource('projects', \App\Http\Controllers\Api\ProjectsController::class);
+    Route::apiResource('projects', ProjectsController::class);
 });

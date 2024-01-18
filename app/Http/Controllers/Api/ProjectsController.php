@@ -3,14 +3,16 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreProjectRequest;
-use App\Http\Requests\UpdateProjectRequest;
-use App\Http\Resources\ProjectResource;
+use App\Http\Requests\Projects\StoreProjectRequest;
+use App\Http\Requests\Projects\UpdateProjectRequest;
 use App\Models\Project;
-use Response;
 
 class ProjectsController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Project::class, 'project');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -24,7 +26,7 @@ class ProjectsController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        //
+
     }
 
     /**
