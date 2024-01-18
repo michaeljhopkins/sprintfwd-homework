@@ -20,4 +20,6 @@ Route::middleware(['auth:sanctum',])->group(function () {
     Route::get('/user', function (Request $request) {
         return new UserResource(auth()->user());
     });
+
+    Route::apiResource('projects', \App\Http\Controllers\Api\ProjectsController::class);
 });

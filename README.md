@@ -10,5 +10,6 @@ customizations
 
 ```
 php artisan make:migration add_columns_to_users_table
-php artisan make:model Project --controller --resource --seed --migration --test
+php artisan make:model Project --all
+php artisan make:controller ProjectsController --model=Project --api --requests
 ```
