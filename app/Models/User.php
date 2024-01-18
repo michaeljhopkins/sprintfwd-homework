@@ -113,4 +113,15 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Project::class);
     }
+
+    public function belongsToProject($project)
+    {
+        if (is_null($project)) {
+            return false;
+        }
+
+        return $this->projects->contains(function ($p) use ($project) {
+                return $p->id === $project->id;
+            });
+    }
 }
