@@ -1,0 +1,52 @@
+: 1705437305:0;ls
+: 1705437306:0;pwd
+: 1705437316:0;composer create-project laravel/laravel sprint
+: 1705437333:0;subl ./sprint
+: 1705437349:0;composer install
+: 1705437351:0;cd sprint
+: 1705437352:0;composer install
+: 1705437362:0;subl ~/.bash_history
+: 1705437371:0;composer require barryvdh/laravel-ide-helper barryvdh/laravel-debugbar\
+
+: 1705437378:0;composer require barryvdh/laravel-ide-helper barryvdh/laravel-debugbar -W\
+
+: 1705437411:0;composer require laravel/jetstream
+: 1705437430:0;php artisan jetstream:install livewire --teams
+: 1705437442:0;php artisan jetstream:install livewire --dark
+: 1705437454:0;npm install\
+npm run build\
+php artisan migrate
+: 1705437462:0;nvm
+: 1705437473:0;curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+: 1705437484:0;exec $SHELL
+: 1705437486:0;nvm
+: 1705437495:0;nvm install node
+: 1705437516:0;nvm use node
+: 1705437520:0;npm install
+: 1705437531:0;npm run build
+: 1705437540:0;php artisan migrate
+: 1705437553:0;php artisan serve
+: 1705438102:0;cd projects/sprintfwd/sprint
+: 1705438104:0;php artisan serve
+: 1705438126:0;php artisan tinker
+: 1705438293:0;php artisan
+: 1705438480:0;cd ../
+: 1705438497:0;composer create-project laravel/laravel sprint2
+: 1705438515:0;sudo mysql -uroot -p
+: 1705438561:0;sudo systemctl restart mysql.service
+: 1705438567:0;cd sprint2
+: 1705438573:0;cp ../sprint/.env ./.env
+: 1705438576:0;cd ../
+: 1705438579:0;rm -r sprint
+: 1705438597:0;mv sprint2 sprint
+: 1705438601:0;cd sprint
+: 1705438605:0;composer require laravel/jetstream
+: 1705438623:0;php artisan jetstream:install livewire --teams --dark\
+
+: 1705438650:0;npm install\
+npm run build\
+php artisan migrate
+: 1705438660:0;php artisan serve
+: 1705438663:0;exec $SHELL
+: 1705439063:0;php artisan test
+: 1705439153:0;cp ~/.zsh_history history.txt
