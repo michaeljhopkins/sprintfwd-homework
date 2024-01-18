@@ -26,7 +26,11 @@ class ProjectsController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
+        $project = Project::create($request->validated());
 
+        $project->users()->attach(auth()->user());
+
+        return response()->json($project->fresh()->load('users'));
     }
 
     /**
@@ -42,7 +46,11 @@ class ProjectsController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $validatedData = $request->validated();
+
+        $project->update($validatedData);
+
+        return response()->json($project->fresh()->load('users'));
     }
 
     /**
@@ -50,6 +58,8 @@ class ProjectsController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $project->delete();
+
+        return response([]);
     }
 }
